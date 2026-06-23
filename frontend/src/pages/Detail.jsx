@@ -51,7 +51,7 @@ function Detail() {
                 <img
                   src={blogs?.blogImage?.url}
                   alt="mainblogsImg"
-                  className="md:w-1/2 w-full h-[400px] mb-6 rounded-lg shadow-lg cursor-pointer border"
+                  className="md:w-1/2 w-full h-96 mb-6 rounded-lg shadow-lg cursor-pointer border"
                 />
               )}
               <div className="md:w-1/2 w-full md:pl-6">

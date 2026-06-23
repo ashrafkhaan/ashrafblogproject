@@ -13,7 +13,7 @@ function MyBlogs() {
     const fetchMyBlogs = async () => {
       try {
         const { data } = await axios.get(
-          `${BACKEND_URL}/blogs/my-blogs`,
+          `${BACKEND_URL}/api/blogs/my-blogs`,
           { withCredentials: true }
         );
         console.log(data);
