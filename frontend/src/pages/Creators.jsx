@@ -4,6 +4,7 @@ import { BACKEND_URL } from "../../utils";
 
 function Creators() {
   const [creators, setCreators] = useState([]);
+  const [showAdmins, setShowAdmins] = useState(false);
   const [users, setUsers] = useState([]);
   const [showUsers, setShowUsers] = useState(false);
 
@@ -46,19 +47,54 @@ function Creators() {
 
   return (
     <div className="my-20 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-4 mb-8 relative">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between items-center mb-8 relative">
           <h1 className="text-4xl font-extrabold bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
             Meet Our Creators
           </h1>
 
-                 
+
           <div className="flex gap-3">
             <button
-              className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md"
+              onClick={() => setShowAdmins(!showAdmins)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300"
             >
               👨‍💼 Admins ({creators.length})
             </button>
+            {showAdmins && (
+              <div
+                className="
+      absolute
+      right-80
+      top-14
+      w-72
+      bg-white
+      rounded-xl
+      shadow-2xl
+      border
+      z-50
+      animate-fadeIn
+    "
+              >
+                <div className="bg-blue-600 text-white px-4 py-3 font-semibold">
+                  Admins List
+                </div>
+
+                <div className="max-h-80 overflow-y-auto">
+                  {creators.map((admin) => (
+                    <div
+                      key={admin._id}
+                      className="px-4 py-3 border-b hover:bg-gray-100"
+                    >
+                      <p>{admin.name}</p>
+                      <p className="text-xs text-gray-500">
+                        {admin.email}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <button
               onClick={() => setShowUsers(!showUsers)}
@@ -83,6 +119,7 @@ function Creators() {
         animate-fadeIn
       "
             >
+
               <div className="bg-green-600 text-white px-4 py-3 font-semibold">
                 Users List
               </div>
@@ -108,7 +145,7 @@ function Creators() {
           {creators.map((creator) => (
             <div
               key={creator._id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full m-2"
+              className="bg-white shadow-lg rounded-lg overflow-hidden w-80 m-2"
             >
               <div className="relative">
                 <img
