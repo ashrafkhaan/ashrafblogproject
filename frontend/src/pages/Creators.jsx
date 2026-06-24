@@ -65,7 +65,8 @@ function Creators() {
               <div
                 className="
       absolute
-      right-80
+      right:0
+      sm:right-80
       top-14
       w-72
       bg-white
@@ -141,11 +142,11 @@ function Creators() {
           )}
         </div>
 
-        <div className="flex flex-wrap justify-center items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {creators.map((creator) => (
             <div
               key={creator._id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden w-80 m-2"
+              className="bg-white shadow-lg rounded-lg overflow-hidden w-full"
             >
               <div className="relative">
                 <img
