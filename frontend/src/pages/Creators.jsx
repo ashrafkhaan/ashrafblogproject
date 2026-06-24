@@ -65,7 +65,7 @@ function Creators() {
               <div
                 className="
       absolute
-      right:0
+      right:10
       sm:right-80
       top-14
       w-72
@@ -152,7 +152,7 @@ function Creators() {
                 <img
                   src={creator.photo.url}
                   alt="avatar"
-                  className="w-full h-32 object-cover"
+                  className="w-full h-40 object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 transform translate-y-1/2">
                   <img
