@@ -138,3 +138,9 @@ export const getAdmins=async(req,res)=>{
   const admins =await User.find({role:"admin"});
   res.status(200).json({admins});
 };
+
+// new change
+export const getUsers=async(req,res)=>{
+  const users =await User.find({role:"user"});
+  res.status(200).json({users});
+};

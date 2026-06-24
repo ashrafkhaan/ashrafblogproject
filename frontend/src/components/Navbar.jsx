@@ -48,6 +48,7 @@ function Navbar() {
                         <Link to="/creators" className='hover:text-blue-600 transition duration-300'>CREATORS</Link>
                         <Link to="/about" className='hover:text-blue-600 transition duration-300'>ABOUT</Link>
                         <Link to="/contact" className='hover:text-blue-600 transition duration-300'>CONTACT</Link>
+        
                     </ul>
                     <div className='md:hidden' onClick={() => setShow(!show)}>{show ? <IoClose size={24} /> : <AiOutlineMenu size={24} />}</div>
                 </div>

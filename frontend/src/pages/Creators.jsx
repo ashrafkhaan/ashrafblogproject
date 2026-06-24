@@ -4,6 +4,9 @@ import { BACKEND_URL } from "../../utils";
 
 function Creators() {
   const [creators, setCreators] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [showUsers, setShowUsers] = useState(false);
+
   console.log(creators);
   useEffect(() => {
     const fetchCreators = async () => {
@@ -19,11 +22,54 @@ function Creators() {
         console.log(error);
       }
     };
+
+    const fetchUsers = async () => {
+      try {
+        const { data } = await axios.get(
+          `${BACKEND_URL}/api/users/users`,
+          {
+            withCredentials: true,
+          }
+        );
+
+        setUsers(data.users);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchCreators();
+    fetchUsers();
+
+     
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center items-center my-20 bg-gray-100">
+    <div className="my-20 bg-gray-100">
+      <div className="flex justify-between items-center px-6 mb-6">
+  <h1 className="text-3xl font-bold">
+    Popular Creators
+  </h1>
+
+  <button
+    onClick={() => setShowUsers(!showUsers)}
+    className="bg-green-600 text-white px-4 py-2 rounded-lg"
+  >
+    Total Users ({users.length})
+  </button>
+</div>
+{showUsers && (
+  <div className="mx-6 bg-white p-4 rounded-lg shadow mb-6">
+    <h2 className="font-bold mb-2">Users List</h2>
+
+    {users.map((user) => (
+      <p key={user._id} className="border-b py-2">
+        {user.name}
+      </p>
+    ))}
+  </div>
+)}
+<div className="flex flex-wrap justify-center items-center">
       {creators.map((creator) => (
         <div
           key={creator._id}
@@ -52,7 +98,9 @@ function Creators() {
             <p className="text-center text-gray-600 mt-2">{creator.role}</p>
           </div>
         </div>
+         
       ))}
+    </div>
     </div>
   );
 }
