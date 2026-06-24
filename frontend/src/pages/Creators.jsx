@@ -47,7 +47,7 @@ function Creators() {
   return (
     <div className="my-20 bg-gray-100">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center px-6 mb-8 relative">
+        <div className="flex justify-between items-center max-w-7xl mx-auto px-4 mb-8 relative">
           <h1 className="text-4xl font-extrabold bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
             Meet Our Creators
           </h1>
@@ -68,6 +68,21 @@ function Creators() {
           >
             👥 Total Users ({users.length})
           </button>
+
+          <div className="flex gap-3">
+            <button
+              className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md"
+            >
+              👨‍💼 Admins ({creators.length})
+            </button>
+
+            <button
+              onClick={() => setShowUsers(!showUsers)}
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow-md"
+            >
+              👥 Users ({users.length})
+            </button>
+          </div>
 
           {showUsers && (
             <div
