@@ -77,7 +77,7 @@ function Creators() {
       animate-fadeIn
     "
               >
-                <div className="bg-blue-600 text-white px-4 py-3 font-semibold">
+                <div className="bg-blue-600 text-white px-4 py-3 font-semibold cursor-pointer">
                   Admins List
                 </div>
 
@@ -99,7 +99,7 @@ function Creators() {
 
             <button
               onClick={() => setShowUsers(!showUsers)}
-              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300"
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300 cursor-pointer"
             >
               👥 Users ({users.length})
             </button>
@@ -146,7 +146,7 @@ function Creators() {
           {creators.map((creator) => (
             <div
               key={creator._id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden w-full"
+              className="bg-white shadow-lg rounded-lg overflow-hidden w-full transition scale-105"
             >
               <div className="relative">
                 <img
