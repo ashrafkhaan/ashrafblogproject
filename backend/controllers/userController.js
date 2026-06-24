@@ -26,6 +26,15 @@ export const register = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ message: "User already exist" });
     }
+    
+
+    const existingPhone = await User.findOne({ phone });
+
+    if (existingPhone) {
+      return res.status(400).json({
+        message: "Phone number already registered",
+      });
+    }
 
     const cloudinaryResponse = await cloudinary.uploader.upload(photo.tempFilePath);
 
@@ -65,7 +74,7 @@ export const register = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ error: error.message});
+    return res.status(500).json({ error: error.message });
   }
 };
 
@@ -128,19 +137,19 @@ export const logout = (req, res) => {
 };
 
 
-export const getMyProfile=async(req,res)=>{
-    const user =await req.user;
-    res.status(200).json(user);
+export const getMyProfile = async (req, res) => {
+  const user = await req.user;
+  res.status(200).json(user);
 };
 
 
-export const getAdmins=async(req,res)=>{
-  const admins =await User.find({role:"admin"});
-  res.status(200).json({admins});
+export const getAdmins = async (req, res) => {
+  const admins = await User.find({ role: "admin" });
+  res.status(200).json({ admins });
 };
 
 // new change
-export const getUsers=async(req,res)=>{
-  const users =await User.find({role:"user"});
-  res.status(200).json({users});
+export const getUsers = async (req, res) => {
+  const users = await User.find({ role: "user" });
+  res.status(200).json({ users });
 };

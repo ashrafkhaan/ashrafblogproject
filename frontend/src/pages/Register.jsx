@@ -89,7 +89,8 @@ const Register = () => {
 
         } catch (error) {
             console.log(error)
-            toast.error("Please fill all required fields")
+            toast.error(
+                error?.response?.data?.message || "Something went wrong");
         } finally {
             setLoading(false);
         }
