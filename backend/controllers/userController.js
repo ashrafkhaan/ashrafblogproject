@@ -36,6 +36,10 @@ export const register = async(req, res) => {
             return res.status(400).json({ message: "Invalid photo format" });
         }
 
+        console.log("Photo:", photo);
+        console.log("Temp File Path:", photo.tempFilePath);
+        console.log("Mime Type:", photo.mimetype);
+
         let cloudinaryResponse;
 
         try {
