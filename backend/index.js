@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import fileUpload from "express-fileupload";
 import { v2 as cloudinary } from 'cloudinary'
 import cookieParser from "cookie-parser";
-import dns from "node:dns";
+
 
 
 import router from "./routes/userRoute.js";
@@ -17,7 +17,7 @@ import blogRoute from "./routes/blog.route.js";
 const app = express();
 dotenv.config();
 
-dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 
 const port = process.env.PORT || 4002;
 const MONGO_URL = process.env.MONGO_URL;
@@ -74,9 +74,7 @@ cloudinary.config({
     api_secret: process.env.CLOUD_SECRET_KEY
 });
 
-console.log(process.env.CLOUD_NAME);
-console.log(process.env.CLOUD_API_KEY);
-console.log(process.env.CLOUD_SECRET_KEY ? "Secret Found" : "Secret Missing");
+
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
