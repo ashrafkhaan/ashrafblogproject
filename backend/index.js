@@ -19,7 +19,7 @@ dotenv.config();
 
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4002;
 const MONGO_URL = process.env.MONGO_URL;
 
 
@@ -41,17 +41,22 @@ app.use(fileUpload({
 
 
 //db code
-const connectDB = async() => {
+const startServer = async() => {
     try {
         await mongoose.connect(MONGO_URL);
         console.log("MongoDB Connected");
+
+        app.listen(port || 4002, () => {
+            console.log(`Server running on ${port}`);
+        });
+
     } catch (error) {
         console.log("MongoDB Error:", error.message);
         process.exit(1);
     }
 };
 
-connectDB();
+startServer();
 
 
 //defining routes
