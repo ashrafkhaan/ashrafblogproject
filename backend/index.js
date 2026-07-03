@@ -68,11 +68,15 @@ app.use("/api/blogs", blogRoute);
 
 //cloudinary
 cloudinary.config({
+
     cloud_name: process.env.CLOUD_NAME,
     api_key: process.env.CLOUD_API_KEY,
     api_secret: process.env.CLOUD_SECRET_KEY
 });
 
+console.log(process.env.CLOUD_NAME);
+console.log(process.env.CLOUD_API_KEY);
+console.log(process.env.CLOUD_SECRET_KEY ? "Secret Found" : "Secret Missing");
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
