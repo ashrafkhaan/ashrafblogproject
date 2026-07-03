@@ -45,7 +45,9 @@ export const register = async(req, res) => {
         try {
             cloudinaryResponse = await cloudinary.uploader.upload(
                 photo.tempFilePath, {
-                    resource_type: "image",
+                    folder: "blog-app",
+                    resource_type: "auto",
+                    overwrite: true,
                 }
             );
 
