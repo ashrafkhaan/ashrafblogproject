@@ -36,10 +36,23 @@ export const register = async(req, res) => {
             return res.status(400).json({ message: "Invalid photo format" });
         }
 
-        const cloudinaryResponse = await cloudinary.uploader.upload(photo.tempFilePath);
+        let cloudinaryResponse;
 
-        if (!cloudinaryResponse || cloudinaryResponse.error) {
-            return res.status(500).json({ message: "Image upload failed" });
+        try {
+            cloudinaryResponse = await cloudinary.uploader.upload(
+                photo.tempFilePath, {
+                    resource_type: "image",
+                }
+            );
+
+            console.log("Cloudinary Success:", cloudinaryResponse);
+
+        } catch (err) {
+            console.error("Cloudinary Error:", err);
+            console.error("Cloudinary Error Message:", err.message);
+            console.error("Cloudinary Full Error:", JSON.stringify(err, null, 2));
+
+            throw err;
         }
 
         const hashPassword = await bcrypt.hash(password, 10);
