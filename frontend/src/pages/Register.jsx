@@ -37,7 +37,7 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault()
-
+        console.log("BACKEND_URL:", BACKEND_URL);
         if (loading) return;
 
         setLoading(true);
@@ -52,6 +52,7 @@ const Register = () => {
         formData.append('photo', photo)
 
         try {
+            
             const { data } = await axios.post(`${BACKEND_URL}/api/users/register`,
                 formData, {
                 headers: {

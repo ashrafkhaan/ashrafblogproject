@@ -16,7 +16,7 @@ function Contact() {
 
   const onSubmit = async (data) => {
     const userInfo = {
-      access_key: "5781b560-a7f1-4dfd-953e-e5f846c9c1bd",
+      access_key: "11462a03-c54a-423c-a95e-0fb43609d887",
       name: data.username,
       email: data.email,
       message: data.message,
@@ -118,7 +118,7 @@ function Contact() {
                 <FaPhone className="text-yellow-300 text-2xl" />
                 <div>
                   <p className="font-semibold">Phone</p>
-                  <p>+91 8853640602</p>
+                  <p>+91 6389212013</p>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ function Contact() {
                 <FaEnvelope className="text-pink-300 text-2xl" />
                 <div>
                   <p className="font-semibold">Email</p>
-                  <p>babuabhishekk088@gmail.com</p>
+                  <p>ashrafkhan71363@gmail.com</p>
                 </div>
               </div>
 
