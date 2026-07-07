@@ -124,20 +124,18 @@ const Footer = () => {
       </footer>
       <div className=" container mx-auto  flex flex-col md:flex-row justify-between items-center">
         <div className="text-xl font-semibold hidden md:flex">
-          Abhi<span className="text-blue-500 font-bold">Blog</span>
+          Ashrar<span className="text-blue-500 font-bold">Blog</span>
         </div>
         <div className="text-gray-400 text-sm hidden md:flex">
-          <p>&copy; 2024 DhiWise PVT. LTD. All rights reserved</p>
+          <p>&copy; © 2026 Ashraf Khan. All rights reserved.</p>
         </div>
         <div className="mt-4 md:mt-0 flex space-x-4">
-          <a href="https://github.com/abhishekbabu04" target="_blank">
+          <a href="https://github.com/ashrafkhaan" target="_blank">
             <FaGithub className="h-6" />
           </a>
-          <a href="https://www.youtube.com/@ToonWorldAbhi" target="_blank">
-            <BsYoutube className="h-6" />
-          </a>
+          
 
-          <a href="https://www.linkedin.com/in/abhishek-babu-303439241/" target="_blank">
+          <a href="https://www.linkedin.com/in/ashraf-khan-374b562a5/" target="_blank">
             <FaLinkedin className="h-6" />
           </a>
         </div>
