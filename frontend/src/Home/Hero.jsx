@@ -10,7 +10,7 @@ const Hero = () => {
       {/* start of text */}
       <div className="flex flex-col items-center justify-center text-center pt-12 pb-5 px-4">
         <p className="text-purple-600 font-semibold uppercase tracking-wider mb-3">
-          Welcome to AbhiBlog
+          Welcome to AshrafBlog
         </p>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
