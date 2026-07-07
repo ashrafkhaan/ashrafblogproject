@@ -23,7 +23,7 @@ function About() {
           <p className="text-gray-700 leading-8 text-lg">
             This is{" "}
             <span className="font-bold text-blue-700">
-              {profile?.user?.name || "Abhishek Babu"}
+              {profile?.user?.name || "Ashraf khan"}
             </span>
             , and I am a full stack developer. I build responsive and
             user-friendly web applications using modern technologies and
