@@ -45,8 +45,10 @@ const Sidebar = ({ setComponent }) => {
 
       {/* Sidebar */}
       <div
+        // className={`fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300
+        // ${show ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0`}
         className={`fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300
-        ${show ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0`}
+${show ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
       >
         {/* Close Button */}
         <div
